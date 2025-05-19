@@ -1,6 +1,6 @@
 from enum import Enum
 
 
-class DriverType(Enum):
+class BrowserType(Enum):
     CHROME = 'chrome'
     FIREFOX = 'firefox'
