@@ -22,6 +22,9 @@ class ConfigFileReader:
     def get_excel_path(self) -> str:
         return self._get_property("excelFilePath", "Paths")
 
+    def get_json_path(self) -> str:
+        return self._get_property("jsonFilePath", "Paths")
+
     def get_application_url(self) -> str:
         return self._get_property("url", "Application")
 

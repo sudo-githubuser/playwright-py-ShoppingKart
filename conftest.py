@@ -2,6 +2,9 @@ import pytest
 from playwright.sync_api import Browser, Page, sync_playwright
 from helper.dataProvider.ConfigFileReader import ConfigFileReader
 from helper.enums.DriverType import BrowserType
+from helper.utility.ExcelReader import ExcelFileManager
+from helper.utility.JsonReader import JSONFileManager
+
 
 @pytest.fixture(scope='session')
 def config():
@@ -41,3 +44,11 @@ def page(browser, base_url: str):
         yield page
     finally:
         page.close()
+
+@pytest.fixture(scope="session")
+def read_value_json():
+    return JSONFileManager().read()
+
+@pytest.fixture(scope="session")
+def read_value_excel():
+    return ExcelFileManager().read_excel_data()
