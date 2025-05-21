@@ -11,8 +11,7 @@ class ExcelFileManager:
     @classmethod
     def _init_file_path(cls):
         if cls._excel_file_path is None:
-            config = ConfigFileReader()
-            cls._excel_file_path = config.get_excel_path()
+            cls._excel_file_path = ConfigFileReader().get_excel_path()
 
     @classmethod
     def read_excel_data(cls) -> Dict[str, str]:
@@ -22,7 +21,7 @@ class ExcelFileManager:
 
         try:
             workbook = openpyxl.load_workbook(cls._excel_file_path)
-            sheet = workbook.active #Gets first sheet
+            sheet = workbook.active #Gets the first sheet
 
             for row in sheet.iter_rows(values_only=True):
                 if row and len(row) >= 2 and row[0] and row[1]: #skip empty rows/cells

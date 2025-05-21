@@ -51,3 +51,12 @@ class ConfigFileReader:
             return value
         except Exception as e:
             raise KeyError(f"Missing or invalid config key: {section}.{key}") from e
+
+    def is_headless(self) -> bool:
+        headless_value = self._get_property("browser", "Headless").lower()
+        if headless_value in ("true", "yes", "1"):
+            return True
+        elif headless_value in ("false", "no", "0"):
+            return False
+        else:
+            raise ValueError(f"Invalid headless setting: {headless_value}. Use true/false.")
