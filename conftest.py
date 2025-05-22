@@ -54,6 +54,6 @@ def read_value_json():
 def read_value_excel():
     return ExcelFileManager().read_excel_data()
 
-@pytest.fixture(scope="session") # Remove scope=session if you want to pass the data for each test (in parallel test)
+@pytest.fixture(scope="session") # Remove scope='session' if you want to pass the data for each test (in parallel test)
 def random_data():
     return TestDataGenerator().user_data
