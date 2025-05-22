@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Browser, Page, sync_playwright
 from helper.dataProvider.ConfigFileReader import ConfigFileReader
 from helper.enums.DriverType import BrowserType
+from helper.utility.DataGenerator import TestDataGenerator
 from helper.utility.ExcelReader import ExcelFileManager
 from helper.utility.JsonReader import JSONFileManager
 
@@ -52,3 +53,7 @@ def read_value_json():
 @pytest.fixture(scope="session")
 def read_value_excel():
     return ExcelFileManager().read_excel_data()
+
+@pytest.fixture(scope="session") # Remove scope=session if you want to pass the data for each test (in parallel test)
+def random_data():
+    return TestDataGenerator().user_data
