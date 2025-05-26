@@ -1,0 +1,3 @@
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\screenshots\create_an_account_with_valid_and_unique_email_id_user_is_on_the_home_page_20250526_151226.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\screenshots\create_an_account_with_valid_and_unique_email_id_user_navigates_to_create_account_page_20250526_151227.png

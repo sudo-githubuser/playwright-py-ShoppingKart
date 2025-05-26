@@ -1,4 +1,8 @@
+import os
+
+import allure
 import pytest
+from datetime import datetime
 from playwright.sync_api import Browser, Page, sync_playwright
 from helper.dataProvider.ConfigFileReader import ConfigFileReader
 from helper.enums.DriverType import BrowserType
@@ -7,6 +11,13 @@ from helper.utility.ExcelReader import ExcelFileManager
 from helper.utility.JsonReader import JSONFileManager
 from pageObjects.objectRepository.CreateAccount import CreateAccountPage
 
+# Create screenshots directory
+SCREENSHOTS_DIR = os.path.join(os.getcwd(), "screenshots")
+os.makedirs(SCREENSHOTS_DIR, exist_ok=True)
+
+# Ensure Allure results directory
+ALLURE_RESULTS_DIR = os.path.join(os.getcwd(), "allure-results")
+os.makedirs(ALLURE_RESULTS_DIR, exist_ok=True)
 
 @pytest.fixture(scope='session')
 def config():
