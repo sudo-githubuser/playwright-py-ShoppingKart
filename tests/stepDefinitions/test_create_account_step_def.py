@@ -1,10 +1,14 @@
 import os
 from datetime import datetime
+from pathlib import Path
 
 import allure
 from pytest_bdd import scenario, given, when, then
 
-SCREENSHOTS_DIR = os.path.join(os.getcwd(), "screenshots")
+# PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+print(f"StepDef PROJECT_ROOT: {PROJECT_ROOT}")
+SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "reports", "screenshots")
 
 @allure.epic("User Account")
 @allure.feature("Registration")
