@@ -5,6 +5,7 @@ from helper.enums.DriverType import BrowserType
 from helper.utility.DataGenerator import TestDataGenerator
 from helper.utility.ExcelReader import ExcelFileManager
 from helper.utility.JsonReader import JSONFileManager
+from pageObjects.objectRepository.CreateAccount import CreateAccountPage
 
 
 @pytest.fixture(scope='session')
@@ -57,3 +58,8 @@ def read_value_excel():
 @pytest.fixture(scope="session") # Remove scope='session' if you want to pass the data for each test (in parallel test)
 def random_data():
     return TestDataGenerator().user_data
+
+@pytest.fixture
+def create_account(page):
+    """Provides CreateAccountPage instance"""
+    return CreateAccountPage(page)

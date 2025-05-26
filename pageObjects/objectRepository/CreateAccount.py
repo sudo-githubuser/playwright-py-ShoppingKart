@@ -8,12 +8,12 @@ class CreateAccountPage:
         self._init_locators()
 
     def _init_locators(self):
-        self.create_account_btn = self.page.locator("a:text('Create an Account')")
+        self.create_account_btn = self.page.locator("header a[href*='customer/account/create']")
         self.first_name_input = self.page.get_by_label("First Name")
         self.last_name_input = self.page.get_by_label("Last Name")
         self.email_input = self.page.get_by_label("Email")
-        self.password_input = self.page.get_by_label("Password")
-        self.confirm_pwd_input = self.page.get_by_label("Confirm Password")
+        self.password_input = self.page.locator('#password')
+        self.confirm_pwd_input = self.page.locator('#password-confirmation')
         self.submit_btn = self.page.locator("button[type='submit']").nth(1)
         self.success_msg = self.page.locator("div.message-success")
 
