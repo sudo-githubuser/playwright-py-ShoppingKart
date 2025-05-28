@@ -6,7 +6,7 @@ Feature: Create Account
       Given User is on the home page
       When User navigates to create account page
 
-    @End2End @SmokeTest @FunctionalTest
+    @End2End @Smoke @Regression
     Scenario: Create an account with valid and unique email ID
       When User fills the registration form with valid data
       And User submits the form
