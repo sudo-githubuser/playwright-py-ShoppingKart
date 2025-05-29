@@ -6,7 +6,7 @@ version = "2.14.2"
 description = "Allure pytest integration"
 optional = false
 python-versions = "*"
-groups = ["dev"]
+groups = ["main", "dev"]
 files = [
     {file = "allure_pytest-2.14.2-py3-none-any.whl", hash = "sha256:18f3baa9ebd1b6148223cfa898bacfc2794bb9446221adac1be71deeb26ed79a"},
     {file = "allure_pytest-2.14.2.tar.gz", hash = "sha256:d387492178d27805863d95350bdc38b7feca3ed7165841997630fd4073cc9101"},
@@ -22,7 +22,7 @@ version = "2.14.2"
 description = "Contains the API for end users as well as helper functions and classes to build Allure adapters for Python test frameworks"
 optional = false
 python-versions = ">=3.6"
-groups = ["dev"]
+groups = ["main", "dev"]
 files = [
     {file = "allure_python_commons-2.14.2-py3-none-any.whl", hash = "sha256:ad50385a4c601ec31c86eed773d8ccfdcc687fecbb6535c9768af3bf03b50a19"},
     {file = "allure_python_commons-2.14.2.tar.gz", hash = "sha256:7acdc4fe3efbe709604895e2393f082b2659d8e5653e77ff6367682e6e4a41bc"},
@@ -1064,4 +1064,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "be94118f69145e14bc18aa6669f9b96d8a900b1f34718a6ee43554d63682f9e4"
+content-hash = "7586f01143d088ad669a423f142bf93015d64f305d020b47b0f0b0a18ff6df13"
