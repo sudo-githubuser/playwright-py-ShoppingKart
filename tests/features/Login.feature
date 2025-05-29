@@ -8,7 +8,6 @@ Feature: Login
 
     @End2End @Smoke @Functional @Regression
     Scenario: Login with valid user credentials
-      Given User enters valid email address
-      And User enters valid password
+      Given User enters valid email address, password
       When User clicks on sign in
       Then Home page is displayed

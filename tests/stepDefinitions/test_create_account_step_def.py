@@ -5,7 +5,6 @@ from pathlib import Path
 import allure
 from pytest_bdd import scenario, given, when, then
 
-# PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 print(f"StepDef PROJECT_ROOT: {PROJECT_ROOT}")
 SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "reports", "screenshots")
@@ -43,8 +42,8 @@ def attach_screenshot(page, step_name, scenario_name):
 def user_in_home_page(page):
     """Ensure user is on the home page (handled by page fixture)"""
     # Page is already navigated to base_url by conftest.py
-    attach_screenshot(page, "user_is_on_the_home_page",
-                      "create_an_account_with_valid_and_unique_email_id")
+    attach_screenshot(page, "User is on the home page",
+                      "Create an account with valid and unique email id")
     return page
 
 @when('User navigates to create account page')
@@ -52,8 +51,8 @@ def user_in_home_page(page):
 def navigate_to_create_account_page(page, create_account):
     """Click the 'Create an Account' link"""
     create_account.navigate_to_create_account()
-    attach_screenshot(page, "user_navigates_to_create_account_page",
-                      "create_an_account_with_valid_and_unique_email_id")
+    attach_screenshot(page, "User navigates to create account page",
+                      "Create an account with valid and unique email id")
 
 
 @when('User fills the registration form with valid data')
@@ -65,22 +64,22 @@ def enter_user_details(page, create_account, random_data):
                              email=random_data["email"],
                              password=random_data["password"]
                              )
-    attach_screenshot(page, "user_fills_the_registration_form_with_valid_data",
-                      "create_an_account_with_valid_and_unique_email_id")
+    attach_screenshot(page, "User fills the registration form with valid data",
+                      "Create an account with valid and unique email id")
 
 @when('User submits the form')
 @allure.step("Submit the registration form")
 def submit_form(page, create_account):
     """Submit the account creation form"""
     create_account.submit_form()
-    attach_screenshot(page, "user_submits_the_form",
-                      "create_an_account_with_valid_and_unique_email_id")
+    attach_screenshot(page, "User submits the form",
+                      "Create an account with valid and unique email id")
 
 @then('User should see the account creation success message')
 @allure.step("Verify account creation success message")
 def verify_success_message(page, create_account):
     """Verify the account creation success message"""
     create_account.expect_success_message()
-    attach_screenshot(page, "user_should_see_the_account_creation_success_message",
-                      "create_an_account_with_valid_and_unique_email_id")
+    attach_screenshot(page, "User should see the account creation success message",
+                      "Create an account with valid and unique email id")
 
