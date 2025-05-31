@@ -3,7 +3,9 @@ from datetime import datetime
 from pathlib import Path
 
 import allure
-from pytest_bdd import scenario, given, when
+from pytest_bdd import scenario, given, when, then
+
+from helper.utility.JsonReader import JSONFileManager
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 print(f"StepDef PROJECT_ROOT: {PROJECT_ROOT}")
@@ -12,7 +14,7 @@ SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "reports", "screenshots")
 @allure.epic("User Account")
 @allure.feature("Login")
 @allure.story("Login with valid email ID")
-@scenario('../features/Login.feature', 'Login with valid email ID and password')
+@scenario('../features/Login.feature', 'Login with valid user credentials')
 def test_login():
     """Test login scenario"""
     pass
@@ -58,8 +60,9 @@ def navigate_to_login_page(page, login):
 @given('User enters valid email address, password')
 @allure.step('Enter valid email ID and password')
 def enter_valid_email_address(page, login, random_data):
-    login.fill_email_password(user_email=random_data["user_email"],
-                              user_password=random_data["user_password"])
+    json_manager = JSONFileManager()
+    credentials = json_manager.get_credentials()
+    login.enter_credentials(credentials["email"], credentials["password"])
     attach_screenshot(page, "User enters valid email address, password",
                       "Login with valid email ID and password")
 
@@ -67,10 +70,15 @@ def enter_valid_email_address(page, login, random_data):
 @allure.step('Click on Sign In button')
 def sign_in(page, login):
     login.user_login()
-    login.expect_home_page_message()
     attach_screenshot(page, "User clicks on sign in",
                       "Login with valid email ID and password")
 
+@then('Home page is displayed')
+@allure.step('User logged in successfully')
+def verify_sign_in(page, login):
+    login.expect_home_page_message()
+    attach_screenshot(page, "Home page is displayed",
+                      "Login with valid email ID and password")
 
 
 

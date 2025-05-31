@@ -5,6 +5,8 @@ from pathlib import Path
 import allure
 from pytest_bdd import scenario, given, when, then
 
+from helper.utility.JsonReader import JSONFileManager
+
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 print(f"StepDef PROJECT_ROOT: {PROJECT_ROOT}")
 SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "reports", "screenshots")
@@ -69,9 +71,17 @@ def enter_user_details(page, create_account, random_data):
 
 @when('User submits the form')
 @allure.step("Submit the registration form")
-def submit_form(page, create_account):
+def submit_form(page, create_account, random_data):
     """Submit the account creation form"""
     create_account.submit_form()
+    # Save email and password to JSON if empty
+    json_manager = JSONFileManager()
+    json_manager.save_credentials_if_empty(
+        first_name = random_data['first name'],
+        last_name = random_data['last name'],
+        email = random_data["email"],
+        password = random_data["password"]
+    )
     attach_screenshot(page, "User submits the form",
                       "Create an account with valid and unique email id")
 
