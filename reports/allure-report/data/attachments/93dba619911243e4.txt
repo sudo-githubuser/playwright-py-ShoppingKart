@@ -1,0 +1,8 @@
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_is_on_the_home_page_20250531_212622.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_navigates_to_login_page_20250531_212623.png
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_enters_valid_email_address,_password_20250531_212623.png
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Nicole Lang
+Welcome, Nicole Lang!

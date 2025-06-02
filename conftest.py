@@ -2,17 +2,15 @@ import os
 import platform
 import shutil
 import subprocess
-from pathlib import Path
-import allure
 import pytest
-from allure_commons.reporter import AllureReporter
-from playwright.sync_api import Browser, Page, sync_playwright, expect
+from playwright.sync_api import sync_playwright
 from helper.dataProvider.ConfigFileReader import ConfigFileReader
 from helper.enums.DriverType import BrowserType
 from helper.utility.DataGenerator import TestDataGenerator
 from helper.utility.ExcelReader import ExcelFileManager
 from helper.utility.JsonReader import JSONFileManager
 from pageObjects.objectRepository.CreateAccount import CreateAccountPage
+from pageObjects.objectRepository.Login import LoginPage
 
 # Get project root directory
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -133,3 +131,8 @@ def pytest_sessionfinish(session, exitstatus):
 def create_account(page):
     """Provides CreateAccountPage instance"""
     return CreateAccountPage(page)
+
+@pytest.fixture
+def login(page):
+    """Provides LoginPage instance"""
+    return LoginPage(page)
