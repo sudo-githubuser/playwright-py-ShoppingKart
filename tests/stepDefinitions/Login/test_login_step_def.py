@@ -80,5 +80,11 @@ def verify_sign_in(page, login):
     attach_screenshot(page, "Home page is displayed",
                       "Login with valid email ID and password")
 
+@then('User is logged out')
+def user_logout(page, login):
+    login.user_logout()
+    attach_screenshot(page, "User logged out",
+                      "Login with valid email ID and password")
+
 
 

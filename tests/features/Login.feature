@@ -11,3 +11,4 @@ Feature: Login
       Given User enters valid email address, password
       When User clicks on sign in
       Then Home page is displayed
+      And User is logged out

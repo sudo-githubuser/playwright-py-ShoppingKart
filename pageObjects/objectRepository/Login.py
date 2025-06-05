@@ -16,6 +16,8 @@ class LoginPage:
         self.email_fill = self.page.get_by_role('textbox', name="Email*")
         self.password_fill = self.page.get_by_role("textbox", name="Password* Password")
         self.sign_in_btn_login = self.page.get_by_role('button', name='Sign In')
+        self.my_acc_dropdown = self.page.get_by_role("listitem").filter(has_text="Change My Account My Wish").locator("button")
+        self.logout = self.page.get_by_role("link", name="Sign Out")
 
         #For Assertion
         self.login_page_text_check = self.page.get_by_text("Customer Login") #Login page assertion
@@ -34,6 +36,10 @@ class LoginPage:
 
     def user_login(self) -> None:
         self.sign_in_btn_login.click()
+
+    def user_logout(self) -> None:
+        self.my_acc_dropdown.click()
+        self.logout.click()
 
     # --- Assertions ---
     def expect_login_page_message(self, expected_text: str = "Customer Login") -> None:
