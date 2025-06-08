@@ -49,9 +49,16 @@ class HomePageHyperLink:
             raise AssertionError(f"Assertion failed for locator {locator} with text '{assert_text}' and type '{assertion_type}': "
                                  f"{str(e)}")
 
-    def notes_verify(self) -> None:
-        self.notes.click()
+    def notes_verify(self) -> Page:
+        """Click Notes link, handle new tab, and assert page; return new page"""
+        # Wait for the new tab to open
+        with self.page.context.expect_page() as new_page_info:
+            self.notes.click()
+        new_page = new_page_info.value
+        new_page.wait_for_load_state("load")
 
-    def assert_notes(self) -> None:
+        # Assert
         self._assert_links(self.notes_assert, "Magento 2 Store(Sandbox site)")
+        return new_page
+
 
