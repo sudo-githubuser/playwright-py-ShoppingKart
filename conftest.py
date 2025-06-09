@@ -10,6 +10,7 @@ from helper.utility.DataGenerator import TestDataGenerator
 from helper.utility.ExcelReader import ExcelFileManager
 from helper.utility.JsonReader import JSONFileManager
 from pageObjects.objectRepository.CreateAccount import CreateAccountPage
+from pageObjects.objectRepository.HomePageLinks import HomePageHyperLink
 from pageObjects.objectRepository.Login import LoginPage
 
 # Get project root directory
@@ -78,7 +79,7 @@ def read_value_excel():
 def random_data():
     return TestDataGenerator().user_data
 
-# Hook to generate Allure report after test session
+# Hook to generate the Allure report after test session
 @pytest.hookimpl(tryfirst=True)
 def pytest_sessionfinish(session, exitstatus):
     """Generate Allure report after all tests are complete"""
@@ -136,3 +137,8 @@ def create_account(page):
 def login(page):
     """Provides LoginPage instance"""
     return LoginPage(page)
+
+@pytest.fixture
+def homepage_hyperlink(page):
+    """Provides HomePageHyperLink instance"""
+    return HomePageHyperLink(page)

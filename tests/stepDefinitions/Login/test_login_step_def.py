@@ -7,7 +7,7 @@ from pytest_bdd import scenario, given, when, then
 
 from helper.utility.JsonReader import JSONFileManager
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 print(f"StepDef PROJECT_ROOT: {PROJECT_ROOT}")
 SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "reports", "screenshots")
 

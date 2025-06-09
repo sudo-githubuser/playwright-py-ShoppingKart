@@ -1,0 +1,5 @@
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\homepage_hyperlinks_user_is_on_the_home_page_20250610_003232.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\homepage_hyperlinks_navigate_to_notes_link_20250610_003238.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\homepage_hyperlinks_click_write_for_us_link_20250610_003240.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\homepage_hyperlinks_click_subscribe_link_20250610_003244.png

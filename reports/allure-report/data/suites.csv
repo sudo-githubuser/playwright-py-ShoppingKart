@@ -1,3 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
 "../features/CreateAccount.feature: Create an account with valid and unique email ID","14856","test_create_account","tests.stepDefinitions","Sat May 31 21:23:25 IST 2025","passed","Sat May 31 21:23:40 IST 2025","","test_create_account_step_def","",""
+"../features/Login.feature: Login with valid user credentials","14307","test_login","tests.stepDefinitions.Login","Tue Jun 10 00:31:02 IST 2025","passed","Tue Jun 10 00:31:16 IST 2025","","test_login_step_def","",""
 "../features/Login.feature: Login with valid user credentials","12217","test_login","tests.stepDefinitions","Sat May 31 21:39:55 IST 2025","passed","Sat May 31 21:40:07 IST 2025","","test_login_step_def","",""
+"../features/HomePageLinks.feature: Homepage hyperlinks in bottom navigation bar-01","40462","test_homepage_hyperlink","tests.stepDefinitions.HyperLinks","Tue Jun 10 00:32:04 IST 2025","passed","Tue Jun 10 00:32:44 IST 2025","","test_home_page_link_bottom_nav_001","",""

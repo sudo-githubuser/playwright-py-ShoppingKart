@@ -1,0 +1,9 @@
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_is_on_the_home_page_20250610_003110.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_navigates_to_login_page_20250610_003111.png
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_enters_valid_email_address,_password_20250610_003111.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_clicks_on_sign_in_20250610_003113.png
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_home_page_is_displayed_20250610_003114.png
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\login_with_valid_email_id_and_password_user_logged_out_20250610_003116.png
