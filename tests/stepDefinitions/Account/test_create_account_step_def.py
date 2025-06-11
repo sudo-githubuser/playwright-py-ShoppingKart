@@ -18,7 +18,6 @@ def user_in_home_page(page):
     # Page is already navigated to base_url by conftest.py
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Create an account with valid and unique email id",
         step_name="User is on the home page"
     )
     return page
@@ -30,7 +29,6 @@ def navigate_to_create_account_page(page, create_account):
     create_account.navigate_to_create_account()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Create an account with valid and unique email id",
         step_name="User navigates to create account page"
     )
 
@@ -46,7 +44,6 @@ def enter_user_details(page, create_account, random_data):
                              )
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Create an account with valid and unique email id",
         step_name="User fills the registration form with valid data"
     )
 
@@ -65,7 +62,6 @@ def submit_form(page, create_account, random_data):
     )
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Create an account with valid and unique email id",
         step_name="User submits the form"
     )
 
@@ -77,7 +73,6 @@ def verify_success_message(page, create_account):
     create_account.expect_success_message()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Create an account with valid and unique email id",
         step_name="User should see the account creation success message"
     )
 

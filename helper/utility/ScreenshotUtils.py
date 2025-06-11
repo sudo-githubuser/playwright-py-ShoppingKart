@@ -1,3 +1,4 @@
+import inspect
 import os
 from datetime import datetime
 from pathlib import Path
@@ -11,10 +12,22 @@ screenshots_dir = os.path.join(PROJECT_ROOT, "reports", "screenshots")
 
 def capture_and_attach_screenshot(
         page: Page,
-        scenario_name: str,
-        step_name: str
+        scenario_name: str = None,
+        step_name: str = None
 ) -> None:
-    """Captures and attaches a screenshot to Allure"""
+    """Capture and attach a screenshot with automatic scenario name resolution."""
+    # Automatically detect scenario name if not provided
+    if not scenario_name:
+        try:
+            for frame_info in inspect.stack():
+                request = frame_info.frame.f_locals.get('request')
+                if request:
+                    scenario_name = request.node.name
+                    break
+        except Exception as e:
+            scenario_name = "unknown_scenario"
+            print(f"Failed to get scenario name: {e}")
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
     step_name = step_name.replace(" ", "_").lower()
     scenario_name = scenario_name.replace(" ", "_").lower()

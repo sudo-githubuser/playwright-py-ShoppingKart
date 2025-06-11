@@ -25,7 +25,6 @@ def home_page_displayed(page):
     # Page is already navigated to base_url by conftest.py
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Homepage hyperlinks",
         step_name="User is on the home page"
     )
     return page
@@ -37,7 +36,6 @@ def click_notes(homepage_hyperlink, page):
     homepage_hyperlink.notes_verify()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Homepage hyperlinks",
         step_name="Navigate to Notes link"
     )
 
@@ -62,7 +60,6 @@ def click_write_for_us(homepage_hyperlink, page):
     homepage_hyperlink.write_for_us_verify()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Homepage hyperlinks",
         step_name="Navigate to Write for us link"
     )
 
@@ -87,7 +84,6 @@ def click_subscribe(homepage_hyperlink, page):
     homepage_hyperlink.subscribe_verify()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Homepage hyperlinks",
         step_name="Navigate to Subscribe link"
     )
 

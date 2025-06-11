@@ -18,7 +18,6 @@ def user_in_home_page(page):
     # Page is already navigated to base_url by conftest.py
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="User is on the home page"
     )
     return page
@@ -31,7 +30,6 @@ def navigate_to_login_page(page, login):
     login.expect_login_page_message()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="User navigates to login page"
     )
 
@@ -43,7 +41,6 @@ def enter_valid_email_address(page, login, random_data):
     login.enter_credentials(credentials["email"], credentials["password"])
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="User enters valid email address, password"
     )
 
@@ -53,7 +50,6 @@ def sign_in(page, login):
     login.user_login()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="User clicks on sign in"
     )
 
@@ -63,7 +59,6 @@ def verify_sign_in(page, login):
     login.expect_home_page_message()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="Home page is displayed"
     )
 
@@ -72,7 +67,6 @@ def user_logout(page, login):
     login.user_logout()
     capture_and_attach_screenshot(
         page=page,
-        scenario_name="Login with valid email ID and password",
         step_name="User logged out"
     )
 
