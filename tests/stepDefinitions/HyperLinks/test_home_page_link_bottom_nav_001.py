@@ -33,18 +33,14 @@ def home_page_displayed(page):
 @allure.step("Navigate to Notes link")
 def click_notes(homepage_hyperlink, page):
     """Click on a Notes link and capture homepage screenshot"""
-    homepage_hyperlink.notes_verify()
-    capture_and_attach_screenshot(
-        page=page,
-        step_name="Navigate to Notes link"
-    )
+    homepage_hyperlink.click_notes(page)
 
 @then('Notes page is displayed in new tab')
 @allure.step("Verify Notes page in new tab")
-def verify_notes_page():
+def verify_notes_page(homepage_hyperlink):
     """Verify Notes page (assertion handled in HomePageHyperLink.notes)"""
     try:
-        pass  # Assertion handled in HomePageHyperLink.notes
+        homepage_hyperlink.notes_verify()
     except Exception as e:
         print(f"Failed to verify Notes page: {e}")
         allure.attach(
@@ -57,18 +53,14 @@ def verify_notes_page():
 @allure.step("Click Write for us link")
 def click_write_for_us(homepage_hyperlink, page):
     """Click Write for us link and capture screenshot"""
-    homepage_hyperlink.write_for_us_verify()
-    capture_and_attach_screenshot(
-        page=page,
-        step_name="Navigate to Write for us link"
-    )
+    homepage_hyperlink.click_write_for_us(page)
 
 @then('Write for us page is displayed in new tab')
 @allure.step("Verify Write for us page in new tab")
-def verify_write_for_us_page():
+def verify_write_for_us_page(homepage_hyperlink):
     """Verify Write for us page (assertion handled in HomePageHyperLink.write_for_us)"""
     try:
-        pass  # Assertion handled in HomePageHyperLink.write_for_us
+        homepage_hyperlink.write_for_us_verify()
     except Exception as e:
         print(f"Failed to verify Write for us page: {e}")
         allure.attach(
@@ -81,18 +73,14 @@ def verify_write_for_us_page():
 @allure.step("Click Subscribe link")
 def click_subscribe(homepage_hyperlink, page):
     """Click Subscribe link and capture screenshot"""
-    homepage_hyperlink.subscribe_verify()
-    capture_and_attach_screenshot(
-        page=page,
-        step_name="Navigate to Subscribe link"
-    )
+    homepage_hyperlink.click_subscribe(page)
 
 @then('Subscribe page is displayed in new tab')
 @allure.step("Verify Subscribe page in new tab")
-def verify_subscribe_page():
+def verify_subscribe_page(homepage_hyperlink):
     """Verify Subscribe page (assertion handled in HomePageHyperLink.subscribe)"""
     try:
-        pass  # Assertion handled in HomePageHyperLink.subscribe
+        homepage_hyperlink.subscribe_verify()
     except Exception as e:
         print(f"Failed to verify Subscribe page: {e}")
         allure.attach(

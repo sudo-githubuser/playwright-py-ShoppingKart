@@ -1,0 +1,2 @@
+C:\Users\prave\IdeaProjects\playwright-ShoppingKart\resources\configs\configuration.ini
+Screenshot saved: C:\Users\prave\IdeaProjects\playwright-ShoppingKart\reports\screenshots\test_homepage_hyperlink_user_is_on_the_home_page_20250616_2233.png
